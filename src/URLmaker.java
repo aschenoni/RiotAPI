@@ -29,7 +29,7 @@ public class URLmaker {
 	 * @param freeChamps - whether or not you only want to see this weeks
 	 * 					   free to play champions
 	 * @param key - the key to use for lookup
-	 * @return Champion[] in JSON form
+	 * @return Champion[] in JSON form //TODO Champion Class
 	 */
 	static String champion(String server, boolean freeChamps, String key) 
 	{
@@ -40,7 +40,6 @@ public class URLmaker {
 			return url + "champion?api_key=" + key;
 	}
 	
-	
 	/**
 	 * creates the URL to query Riot servers for a list of recent games
 	 * played by a specific summoner
@@ -48,7 +47,7 @@ public class URLmaker {
 	 * @param server - NA, EUNE, EUW
 	 * @param summonerID - ID of the person's games to see
 	 * @param key - the key to use for lookup
-	 * @return Game[],summonerID in JSON form
+	 * @return Game[],summonerID in JSON form //TODO Class
 	 */
 	static String game(String server, int summonerID, String key)
 	{
@@ -63,7 +62,7 @@ public class URLmaker {
 	 * @param server - NA, EUNE, EUW, TR, BR
 	 * @param summonerID - ID of the person's leagues to see
 	 * @param key - the key to use for lookup
-	 * @return League[] in JSON form
+	 * @return League[] in JSON form //TODO League[] Class
 	 */
 	static String league(String server, int summonerID, String key)
 	{
@@ -99,7 +98,7 @@ public class URLmaker {
 	 * @param summonerID - ID of the person's info of interest
 	 * @param runes - queries for runes if true queries for masteries if false
 	 * @param key - the key to use for lookup
-	 * @return Runes[] or Masteries[] in JSON form depending on runesOrMast
+	 * @return Runes[] or Masteries[] in JSON form depending on runesOrMast //Runes Class Masteries Class 
 	 */
 	static String summonerInfo(String server, int summonerID, boolean runesOrMast, String key)
 	{
@@ -117,7 +116,7 @@ public class URLmaker {
 	 * @param server - NA, EUNE, EUW
 	 * @param summonerName - name of person of interest
 	 * @param key - the key to use for lookup
-	 * @return Summoner in JSON form
+	 * @return Summoner in JSON form //TODO Summoner Class
 	 */
 	static String summoner(String server, String summonerName, String key)
 	{
@@ -141,7 +140,7 @@ public class URLmaker {
 	
 	static String listOfSummoners()
 	{
-		//TODO
+		//TODO implement this method
 		//implement later due to JSON list parsing needs
 		return null;
 	}
@@ -152,7 +151,7 @@ public class URLmaker {
 	 * @param server - NA, EUNE, EUW, BR, TR
 	 * @param summonerID - ID of person of interest
 	 * @param key - the key to use for lookup
-	 * @return Team[] in JSON form
+	 * @return Team[] in JSON form //TODO Team Class
 	 */
 	static String team(String server, int summonerID, String key)
 	{
