@@ -1,3 +1,4 @@
+package com.aschenoni.RiotAPI;
 import java.util.Set;
 
 public class Key {

@@ -1,5 +1,4 @@
-import java.util.HashMap;
-
+package com.aschenoni.RiotAPI;
 import java.util.HashMap;
 /**
  * @author abjoy_000
@@ -15,12 +14,12 @@ public class URLmaker {
 	//throw these in a text file later to be moved into map
 	//that way we make sure it stays up to date
 	//TODO
-	static String champV = "1.1";
-	static String gameV = "1.1";
-	static String leagueV = "2.1";
-	static String statsV = "1.1";
-	static String summonerV = "1.1";
-	static String teamV = "2.1";
+	private static String champV = "1.1";
+	private static String gameV = "1.2";
+	private static String leagueV = "2.2";
+	private static String statsV = "1.2";
+	private static String summonerV = "1.2";
+	private static String teamV = "2.2";
 	
 	/**
 	 * creates the URL to query Riot servers for a list of champions
@@ -31,7 +30,7 @@ public class URLmaker {
 	 * @param key - the key to use for lookup
 	 * @return Champion[] in JSON form //TODO Champion Class
 	 */
-	static String champion(String server, boolean freeChamps, String key) 
+	public static String champion(String server, boolean freeChamps, String key) 
 	{
 		String url = urlStub + "lol/"+ server + "/v" + champV + "/";
 		if (freeChamps)
@@ -49,7 +48,7 @@ public class URLmaker {
 	 * @param key - the key to use for lookup
 	 * @return Game[],summonerID in JSON form //TODO Class
 	 */
-	static String game(String server, int summonerID, String key)
+	public static String game(String server, int summonerID, String key)
 	{
 		String url = urlStub + "lol/" + server + "/v" + gameV + "/game/by-summoner/" + summonerID + "/recent?api_key=" + key;
 		return url;
@@ -64,7 +63,7 @@ public class URLmaker {
 	 * @param key - the key to use for lookup
 	 * @return League[] in JSON form //TODO League[] Class
 	 */
-	static String league(String server, int summonerID, String key)
+	public static String league(String server, int summonerID, String key)
 	{
 		String url = urlStub + server + "/v" + leagueV + "/league/by-summoner/" + summonerID + "?api_key=" + key ;
 		return url;
@@ -80,7 +79,7 @@ public class URLmaker {
 	 * @param key - the key to use for lookup
 	 * @return Summoner.Stats in JSON form
 	 */
-	static String stats(String server, int summonerID ,int season, boolean ranked, String key)
+	public static String stats(String server, int summonerID ,int season, boolean ranked, String key)
 	{
 		String url = urlStub + "lol/" + server + "/v" + statsV + "/stats/by-summoner/" + summonerID;
 		if (ranked)
@@ -100,7 +99,7 @@ public class URLmaker {
 	 * @param key - the key to use for lookup
 	 * @return Runes[] or Masteries[] in JSON form depending on runesOrMast //Runes Class Masteries Class 
 	 */
-	static String summonerInfo(String server, int summonerID, boolean runesOrMast, String key)
+	public static String summonerInfo(String server, int summonerID, boolean runesOrMast, String key)
 	{
 		String url = urlStub + "lol/" + server + "/v" + summonerV + "/summoner/" + summonerID + "/";
 		if (runesOrMast)
@@ -118,7 +117,7 @@ public class URLmaker {
 	 * @param key - the key to use for lookup
 	 * @return Summoner in JSON form //TODO Summoner Class
 	 */
-	static String summoner(String server, String summonerName, String key)
+	public static String summoner(String server, String summonerName, String key)
 	{
 		String url = urlStub + "lol/" + server + "/v" + summonerV +"/summoner/by-name/" + summonerName + "?api_key=" + key;
 		return url;
@@ -132,13 +131,13 @@ public class URLmaker {
 	 * @param key - the key to use for lookup
 	 * @return Summoner in JSON form
 	 */
-	static String summoner(String server, int summonerID, String key)
+	public static String summoner(String server, int summonerID, String key)
 	{
 		String url = urlStub + "lol/" + server + "/v" + summonerV +"/summoner/" + summonerID + "?api_key=" + key;
 		return url;
 	}
 	
-	static String listOfSummoners()
+	public static String listOfSummoners()
 	{
 		//TODO implement this method
 		//implement later due to JSON list parsing needs
@@ -153,7 +152,7 @@ public class URLmaker {
 	 * @param key - the key to use for lookup
 	 * @return Team[] in JSON form //TODO Team Class
 	 */
-	static String team(String server, int summonerID, String key)
+	public static String team(String server, int summonerID, String key)
 	{
 		String url = urlStub + server + "/v" + teamV + "/team/by-summoner/" + summonerID + "?api_key=" + key;
 		return url;
